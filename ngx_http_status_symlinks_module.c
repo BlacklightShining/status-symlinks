@@ -1,3 +1,24 @@
+/*
+ *
+ * status-symlinks -- make nginx interpret symlinks as HTTP responses
+ * Copyright (C) 2016  Blacklight Shining <blacklightshining@derpymail.org>
+ *                     (PGP key C7106095)
+ *
+ * This module is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This module is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this module.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
+
 #include "ngx_config.h"
 #include "ngx_core.h"
 #include "ngx_http.h"
@@ -285,7 +306,7 @@ static char *ngx_http_status_symlinks_merge_conf(ngx_conf_t *_,
 
 static ngx_int_t ngx_http_status_symlinks_init(ngx_conf_t *config)
 {
-    ngx_http_core_main_conf_t *main_config = 
+    ngx_http_core_main_conf_t *main_config =
         ngx_http_conf_get_module_main_conf(config, ngx_http_core_module);
     if (!main_config)
         return NGX_ERROR;

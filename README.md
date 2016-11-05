@@ -7,6 +7,25 @@ symlinks that it finds under the document root. This lets you easily make
 redirects without having to edit `nginx`'s configuration, as well as serve
 responses that aren't otherwise supported at all (like 410 Gone).
 
+Copyright and License
+---------------------
+
+`status-symlinks` is copyright (C) 2016  Blacklight Shining
+\<blacklightshining@derpymail.org> (PGP key C7106095)
+
+`status-symlinks` is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+`status-symlinks` is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+A copy of version 3 of the GNU General Public License is included with the
+source of `status-symlinks`, as the `LICENSE` file. You can also find it online
+at <https://www.gnu.org/licenses/>.
+
 Build and Installation
 ----------------------
 
