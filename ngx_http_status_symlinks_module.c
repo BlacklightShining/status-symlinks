@@ -242,14 +242,14 @@ static ngx_int_t ngx_http_status_symlinks_handler(ngx_http_request_t *request)
     switch (request->headers_out.status)
     {
         case 204:
-            request->header_only = 1;
             break;
         case 301:
         case 302:
         case 303:
         case 307:
         case 308:
-            request->header_only = 1;
+            // A label can only be part of a statement, not a declaration, so…
+            ;
             ngx_table_elt_t *location_header = request->headers_out.location
                 = ngx_list_push(&request->headers_out.headers);
             if (!location_header)
@@ -272,13 +272,13 @@ static ngx_int_t ngx_http_status_symlinks_handler(ngx_http_request_t *request)
                 link_header->value = args[1];
                 link_header->hash = 1;
             }
-            if (!args[0].len)
-                request->header_only = 1;
             break;
         default:
             return NGX_DECLINED;
     }
 
+    request->header_only = 1;
+    request->headers_out.content_length_n = 0;
     return ngx_http_send_header(request);
 }
 
